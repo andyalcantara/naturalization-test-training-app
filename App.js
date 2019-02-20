@@ -5,12 +5,31 @@ import { Ionicons } from '@expo/vector-icons';
 
 import Study from './src/components/Study';
 import Test from './src/components/Test';
+import Cards from './src/components/Cards';
+import CardDetailSection from './src/components/CardDetailSection';
 
-import { createBottomTabNavigator, createMaterialTopTabNavigator, createAppContainer } from 'react-navigation';
+import {
+    createBottomTabNavigator,
+    createMaterialTopTabNavigator,
+    createAppContainer,
+    createStackNavigator
+} from 'react-navigation';
+
+const StackNavigator = createStackNavigator({
+  Study: {
+    screen: Study
+  },
+  Cards: {
+    screen: Cards
+  },
+  CardDetail: {
+    screen: CardDetailSection
+  }
+});
 
 const TabNavigator = createBottomTabNavigator({
   Study: {
-    screen: Study,
+    screen: StackNavigator,
   },
   Test: {
     screen: Test
