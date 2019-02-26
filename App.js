@@ -1,6 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View, Platform } from 'react-native';
 
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import cards from './src/reducers/cards';
+
 import { Ionicons } from '@expo/vector-icons';
 
 import Study from './src/components/Study';
@@ -76,14 +80,18 @@ const AndroidTabNavigator = createMaterialTopTabNavigator({
 const IosAppContainer = createAppContainer(TabNavigator);
 const AndroidAppContainer = createAppContainer(AndroidTabNavigator);
 
+const store = createStore(cards);
+
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {Platform.OS === 'ios'
-          ? <IosAppContainer />
-          : <AndroidAppContainer />
-        }
+        <Provider store={store}>
+          {Platform.OS === 'ios'
+              ? <IosAppContainer />
+              : <AndroidAppContainer />
+          }
+        </Provider>
       </View>
     );
   }
