@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Platform } from 'react-native';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import cards from './src/reducers/cards';
+import reducer from './src/reducers';
 import middleware from './src/middleware';
 
 import { Ionicons } from '@expo/vector-icons';
@@ -81,7 +81,7 @@ const AndroidTabNavigator = createMaterialTopTabNavigator({
 const IosAppContainer = createAppContainer(TabNavigator);
 const AndroidAppContainer = createAppContainer(AndroidTabNavigator);
 
-const store = createStore(cards, middleware);
+const store = createStore(reducer, middleware);
 
 export default class App extends React.Component {
     render() {

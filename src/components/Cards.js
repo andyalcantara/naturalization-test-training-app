@@ -4,19 +4,15 @@ import Card from "./Card";
 
 import { connect } from 'react-redux';
 
-import { handleQuestions } from '../actions/shared';
+import { handleQuestions, handleCategories } from '../actions/shared';
 
 class Cards extends React.Component {
 
     componentDidMount() {
-        const { onReceiveQuestions } = this.props;
+        const { onReceiveQuestions, onReceiveCategories } = this.props;
 
         onReceiveQuestions();
-
-        fetch('http://localhost:3000/categories', {
-            method: 'GET'
-        }).then(response => response.json())
-            .then(data => console.log(data));
+        onReceiveCategories();
     }
 
     render() {
@@ -31,7 +27,11 @@ class Cards extends React.Component {
 const mapDispatchToProps = (dispatch) => {
     return {
         onReceiveQuestions: () => {
-            dispatch(handleQuestions())
+            dispatch(handleQuestions());
+        },
+
+        onReceiveCategories: () => {
+            dispatch(handleCategories());
         }
     }
 };
