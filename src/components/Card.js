@@ -5,7 +5,7 @@ class Card extends React.Component {
     render() {
         return (
             <View>
-                <Text>Card Component</Text>
+                <Text>Card Name</Text>
             </View>
         );
     }
