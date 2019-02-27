@@ -9,8 +9,9 @@ import { handleQuestions } from '../actions/shared';
 class Cards extends React.Component {
 
     componentDidMount() {
+        const { onReceiveQuestions } = this.props;
 
-        this.props.dispatch(handleQuestions());
+        onReceiveQuestions();
 
         fetch('http://localhost:3000/categories', {
             method: 'GET'
@@ -27,4 +28,12 @@ class Cards extends React.Component {
     }
 }
 
-export default connect()(Cards);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onReceiveQuestions: () => {
+            dispatch(handleQuestions())
+        }
+    }
+};
+
+export default connect(null, mapDispatchToProps)(Cards);
