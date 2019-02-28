@@ -8,7 +8,7 @@ export function handleQuestions() {
             headers: { 'Content-Type': 'application/json'}
         }).then(response => response.json())
             .then(data => {
-                console.log(data);
+
                 dispatch(getCards(data));
             });
     }
@@ -21,7 +21,7 @@ export function handleCategories() {
                     headers: { 'Content-Type': 'application/json'}
                 }).then(response => response.json())
                 .then(data => {
-                    console.log(data);
+
                     dispatch(getCategories(data));
                 });
     }

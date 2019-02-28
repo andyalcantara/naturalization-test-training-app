@@ -16,6 +16,11 @@ class Cards extends React.Component {
     }
 
     render() {
+
+        const { questions, categories } = this.props;
+        console.log(questions, 'questions');
+        console.log(categories, 'Categories');
+
         return (
             <View>
                 <Card />
@@ -23,6 +28,13 @@ class Cards extends React.Component {
         );
     }
 }
+
+function mapStateToProps(categories, questions) {
+  return {
+      categories,
+      questions,
+  }
+};
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -36,4 +48,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect(null, mapDispatchToProps)(Cards);
+export default connect(mapStateToProps, mapDispatchToProps)(Cards);
