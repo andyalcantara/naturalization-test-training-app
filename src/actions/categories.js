@@ -1,4 +1,4 @@
-import {GET_CATS} from "./cards";
+export const GET_CATS = 'GET_CATS';
 
 export function getCategories(cats) {
     return {

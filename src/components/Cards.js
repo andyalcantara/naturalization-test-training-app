@@ -17,9 +17,8 @@ class Cards extends React.Component {
 
     render() {
 
-        const { questions, categories } = this.props;
-        console.log(questions, 'questions');
-        console.log(categories, 'Categories');
+        const { cards, categories } = this.props;
+        console.log(cards);
 
         return (
             <View>
@@ -29,10 +28,10 @@ class Cards extends React.Component {
     }
 }
 
-function mapStateToProps(categories, questions) {
+function mapStateToProps({categories, cards}) {
   return {
       categories,
-      questions,
+      cards,
   }
 };
 
