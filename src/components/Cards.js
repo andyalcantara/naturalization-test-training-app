@@ -18,7 +18,9 @@ class Cards extends React.Component {
     render() {
 
         const { cards, categories } = this.props;
-        console.log(cards);
+
+        console.log(cards, 'Cards');
+        console.log(categories, 'Categories');
 
         return (
             <View>
