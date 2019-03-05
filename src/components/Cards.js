@@ -24,18 +24,21 @@ class Cards extends React.Component {
 
         return (
             <View>
-                <Card />
+                {cards.map(card => (
+                    <Card question={card.question} answer={card.answer}/>
+                ))}
             </View>
         );
     }
 }
 
 function mapStateToProps({categories, cards}) {
+
   return {
-      categories,
-      cards,
+      categories: Object.keys(categories).map(key => categories[key]),
+      cards: Object.keys(cards).map(key => cards[key]),
   }
-};
+}
 
 const mapDispatchToProps = (dispatch) => {
     return {
