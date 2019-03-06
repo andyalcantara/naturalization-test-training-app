@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 
 const Card = (props) => {
     return (
-        <View>
+        <View style={styles.superContainer}>
             <View style={styles.container}>
                 <Text>{props.question}</Text>
                 <Text>{props.answer}</Text>
@@ -14,11 +14,15 @@ const Card = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: 'center'
+        alignItems: 'center',
     },
 
     superContainer: {
-        flex: 1
+        borderColor: 'blue',
+        borderWidth: 1,
+        borderRadius: 6,
+        padding: 20,
+        marginTop: 20,
     }
 });
 

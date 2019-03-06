@@ -1,29 +1,28 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, FlatList } from 'react-native';
 import Card from "./Card";
 
 import { connect } from 'react-redux';
 
-import { handleQuestions, handleCategories } from '../actions/shared';
+import { handleQuestions } from '../actions/shared';
 
 class Cards extends React.Component {
 
     componentDidMount() {
-        const { onReceiveQuestions, onReceiveCategories } = this.props;
+        const { onReceiveQuestions } = this.props;
 
         onReceiveQuestions();
-        onReceiveCategories();
     }
 
     render() {
 
-        const { cards, categories } = this.props;
+        const { cards } = this.props;
 
         console.log(cards, 'Cards');
-        console.log(categories, 'Categories');
 
         return (
-            <View>
+            <View style={{padding: 5}}>
+                <FlatList />
                 {cards.map(card => (
                     <Card question={card.question} answer={card.answer}/>
                 ))}
@@ -45,10 +44,6 @@ const mapDispatchToProps = (dispatch) => {
         onReceiveQuestions: () => {
             dispatch(handleQuestions());
         },
-
-        onReceiveCategories: () => {
-            dispatch(handleCategories());
-        }
     }
 };
 
