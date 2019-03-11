@@ -22,10 +22,12 @@ class Cards extends React.Component {
 
         return (
             <View style={{padding: 5}}>
-                <FlatList />
-                {cards.map(card => (
-                    <Card question={card.question} answer={card.answer}/>
-                ))}
+                <FlatList
+                    data={cards}
+                    renderItem={({card}) => (
+                        <Card question={card.question} answer={card.answer}/>
+                    )}
+                />
             </View>
         );
     }
