@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     },
 
     superContainer: {
+        flex: 1,
         padding: 10,
         marginTop: 10,
     }

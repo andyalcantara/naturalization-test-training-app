@@ -38,9 +38,9 @@ class Cards extends React.Component {
         }
 
         return (
-            <View style={{flex: 2}}>
+            <View style={{flex: 1, alignItems: 'center'}}>
 
-                <View style={{padding: 5, width: '90%', justifyContent: 'center'}}>
+                <View style={{flex: 3, padding: 5, width: '90%', justifyContent: 'center'}}>
                     <View style={{flexDirection: 'row', borderColor: 'blue', borderWidth: 1, borderRadius: 6}}>
                         <Card question={question} answer={answer} />
                     </View>
