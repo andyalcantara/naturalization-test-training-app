@@ -19,8 +19,8 @@ const styles = StyleSheet.create({
     },
 
     superContainer: {
-        padding: 20,
-        marginTop: 20,
+        padding: 10,
+        marginTop: 10,
     }
 });
 

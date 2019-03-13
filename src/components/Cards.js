@@ -38,13 +38,15 @@ class Cards extends React.Component {
         }
 
         return (
-            <View style={{padding: 5, borderColor: 'blue', borderWidth: 1, borderRadius: 6}}>
+            <View style={{flex: 2}}>
 
-                <View style={{flexDirection: 'row'}}>
-                    <Card question={question} answer={answer} />
+                <View style={{padding: 5, width: '90%', justifyContent: 'center'}}>
+                    <View style={{flexDirection: 'row', borderColor: 'blue', borderWidth: 1, borderRadius: 6}}>
+                        <Card question={question} answer={answer} />
+                    </View>
+
+                    <Button title='Next' onPress={this.handleAnswer} />
                 </View>
-
-                <Button title='Next' onPress={this.handleAnswer} />
 
             </View>
         );
