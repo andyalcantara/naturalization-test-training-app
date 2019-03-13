@@ -15,12 +15,10 @@ const Card = (props) => {
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
+        justifyContent: 'center'
     },
 
     superContainer: {
-        borderColor: 'blue',
-        borderWidth: 1,
-        borderRadius: 6,
         padding: 20,
         marginTop: 20,
     }
