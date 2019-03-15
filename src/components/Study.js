@@ -3,12 +3,6 @@ import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity, Platform } from
 
 import { Ionicons } from '@expo/vector-icons';
 
-const data = [
-    { id: 0, title: '10 Random Questions of the day', icon: 'shuffle' },
-    { id: 1, title: 'Study Content', icon: 'list-box' },
-    { id: 2, title: 'Cards', icon: 'albums' }
-]
-
 class Study extends React.Component {
 
     render() {
