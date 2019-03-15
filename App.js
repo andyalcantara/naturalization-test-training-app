@@ -12,6 +12,8 @@ import Study from './src/components/Study';
 import Test from './src/components/Test';
 import Cards from './src/components/Cards';
 import CardDetailSection from './src/components/CardDetailSection';
+import RandomQuestions from './src/components/RandomQuestions';
+import StudyContent from './src/components/StudyContent';
 
 import {
     createBottomTabNavigator,
@@ -23,6 +25,12 @@ import {
 const StackNavigator = createStackNavigator({
     Study: {
         screen: Study
+    },
+    RandomQuestions: {
+        screen: RandomQuestions
+    },
+    StudyContent: {
+        screen: StudyContent
     },
     Cards: {
         screen: Cards

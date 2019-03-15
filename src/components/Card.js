@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
 
     answer: {
         marginTop: 30,
-        alignContent: 'center',
+        alignItems: 'center',
     }
 });
 

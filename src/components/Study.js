@@ -17,12 +17,12 @@ class Study extends React.Component {
                 <Text style={styles.title}>Study your Material</Text>
 
                 <View style={{padding: 10, marginTop: 40}}>
-                    <TouchableOpacity style={styles.sections} onPress={() => alert("I was pressed")}>
+                    <TouchableOpacity style={styles.sections} onPress={() => this.props.navigation.navigate('RandomQuestions')}>
                         {Platform.OS === 'ios' ? <Ionicons style={{marginLeft: 20}} name="ios-shuffle" size={30}/> : <Ionicons name={'md-shuffle'} size={30}/>}
                         <Text style={{marginLeft: 20}}>10 Random Questions of the day</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.sections} onPress={() => alert("I was pressed")}>
+                    <TouchableOpacity style={styles.sections} onPress={() => this.props.navigation.navigate('StudyContent')}>
                         {Platform.OS === 'ios' ? <Ionicons style={{marginLeft: 20}} name={'ios-list-box'} size={30}/> : <Ionicons name={'md-list-box'} size={30}/>}
                         <Text style={{marginLeft: 20}}>Study Content</Text>
                     </TouchableOpacity>
