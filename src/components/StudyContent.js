@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 import { connect } from 'react-redux';
 import {handleCategories} from "../actions/shared";
@@ -17,9 +17,8 @@ class StudyContent extends React.Component {
 
         return (
             <View>
-                <Text>Study Content Component</Text>
                 {categories.map(category => (
-                    <Text>{category.title}</Text>
+                    <TouchableOpacity style={styles.title}><Text>{category.title}</Text></TouchableOpacity>
                 ))}
             </View>
         );
@@ -40,5 +39,11 @@ function mapDispatchToProps(dispatch) {
         }
     }
 }
+
+const styles = StyleSheet.create({
+   title: {
+       fontWeight: 'bold'
+   }
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(StudyContent);
