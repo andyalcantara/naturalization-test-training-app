@@ -18,7 +18,10 @@ class StudyContent extends React.Component {
         return (
             <View>
                 {categories.map(category => (
-                    <TouchableOpacity style={styles.title}><Text>{category.title}</Text></TouchableOpacity>
+                    <View>
+                        <TouchableOpacity style={styles.title}><Text>{category.title}</Text></TouchableOpacity>
+                        <Text>{category.subCategories.A.title}</Text>
+                    </View>
                 ))}
             </View>
         );
