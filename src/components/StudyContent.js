@@ -1,15 +1,44 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
+import { connect } from 'react-redux';
+import {handleCategories} from "../actions/shared";
+
 class StudyContent extends React.Component {
 
+    componentDidMount() {
+        const { onGettingCategories } = this.props;
+        onGettingCategories();
+    }
+
     render() {
+
+        const { categories } = this.props;
+
         return (
             <View>
                 <Text>Study Content Component</Text>
+                {categories.map(category => (
+                    <Text>{category.title}</Text>
+                ))}
             </View>
         );
     }
 }
 
-export default StudyContent;
+function mapStateToProps({ categories }) {
+    return {
+        categories: Object.keys(categories).map(key => categories[key]),
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+
+    return {
+        onGettingCategories: () => {
+            dispatch(handleCategories())
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(StudyContent);

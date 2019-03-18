@@ -56,7 +56,6 @@ class Cards extends React.Component {
 function mapStateToProps({categories, cards}) {
 
   return {
-      categories: Object.keys(categories).map(key => categories[key]),
       cards: Object.keys(cards).map(key => cards[key]),
   }
 }
