@@ -6,6 +6,10 @@ import {handleCategories} from "../actions/shared";
 
 class StudyContent extends React.Component {
 
+    state = {
+        firstCat: false
+    };
+
     componentDidMount() {
         const { onGettingCategories } = this.props;
         onGettingCategories();
@@ -14,13 +18,16 @@ class StudyContent extends React.Component {
     render() {
 
         const { categories } = this.props;
+        const { firstCat } = this.state;
 
         return (
             <View>
                 {categories.map(category => (
                     <View>
-                        <TouchableOpacity style={styles.title}><Text>{category.title}</Text></TouchableOpacity>
-                        <Text>{category.subCategories.A.title}</Text>
+                        <TouchableOpacity style={styles.title} onPress={() => this.setState({ firstCat: true })}>
+                            <Text>{category.title}</Text>
+                        </TouchableOpacity>
+                        {firstCat ? <Text>{category.subCategories.A.title}</Text> : <Text></Text>}
                     </View>
                 ))}
             </View>
