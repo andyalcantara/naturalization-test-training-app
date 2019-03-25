@@ -19,15 +19,15 @@ class StudyContent extends React.Component {
 
         const { categories } = this.props;
         const { firstCat } = this.state;
-
+        console.log(categories);
         return (
             <View>
                 {categories.map(category => (
                     <View>
-                        <TouchableOpacity style={styles.title} onPress={() => this.setState({ firstCat: true })}>
+                        <TouchableOpacity style={styles.title} onPress={() => this.setState(oldState => ({ firstCat: !oldState.firstCat }))}>
                             <Text>{category.title}</Text>
                         </TouchableOpacity>
-                        {firstCat ? <Text>{category.subCategories.A.title}</Text> : <Text></Text>}
+                        {firstCat && <Text>{category.subCategories.A.title}</Text>}
                     </View>
                 ))}
             </View>
