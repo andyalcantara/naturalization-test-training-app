@@ -11,21 +11,25 @@ class RandomQuestions extends React.Component {
         onReceiveQuestions();
     }
 
-    generateIndex = () => {
+    generateIndexes = () => {
         const { cards } = this.props;
-
-        return Math.floor(Math.random() * cards.length)
+        return Math.floor(Math.random() * cards.length);
     };
 
     render() {
         const { cards } = this.props;
-        console.log(cards);
+        let randomCards = [];
 
-        console.log(cards[`${Math.floor(((Math.random() * 20)) - 1)}`]);
+        for (var i = 0; i < 10; i++) {
+            randomCards.push(cards[`${this.generateIndexes()}`])
+        }
+
         return (
             <View>
                 <Text>Random Questions</Text>
-                {this.generateIndex}
+                {
+                    console.log(randomCards, "My random cards")
+                }
             </View>
         );
     }
