@@ -19,8 +19,9 @@ class RandomQuestions extends React.Component {
 
     render() {
         const { cards } = this.props;
-        console.log(Math.floor(Math.random() * 20));
-        console.log(cards[`${Math.floor(Math.random() * 20)}`]);
+        console.log(cards);
+
+        console.log(cards[`${Math.floor(((Math.random() * 20)) - 1)}`]);
         return (
             <View>
                 <Text>Random Questions</Text>
@@ -32,10 +33,10 @@ class RandomQuestions extends React.Component {
 
 function mapStateToProps({ cards }) {
 
-    console.log(cards);
-
     return {
-        cards: Object.keys(cards).map(key => cards[key])
+        cards: Object.keys(cards).map(key => cards[key]).sort((a, b) => {
+            parseInt(b.id, 10) - parseInt(a.id)
+        })
     }
 }
 
