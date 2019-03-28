@@ -1,41 +1,43 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import {View, Text} from 'react-native';
 
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import {handleQuestions} from "../actions/shared";
 
 class RandomQuestions extends React.Component {
 
     componentDidMount() {
-        const { onReceiveQuestions } = this.props;
+        const {onReceiveQuestions} = this.props;
         onReceiveQuestions();
     }
 
     generateIndexes = () => {
-        const { cards } = this.props;
+        const {cards} = this.props;
         return Math.floor(Math.random() * cards.length);
     };
 
     render() {
-        const { cards } = this.props;
+        const {cards} = this.props;
         let randomCards = [];
 
         for (var i = 0; i < 10; i++) {
             randomCards.push(cards[`${this.generateIndexes()}`])
         }
 
+
+
         return (
             <View>
                 <Text>Random Questions</Text>
                 {
-                    console.log(randomCards, "My random cards")
+                    randomCards.forEach(card => console.log(card['id']))
                 }
             </View>
         );
     }
 }
 
-function mapStateToProps({ cards }) {
+function mapStateToProps({cards}) {
 
     return {
         cards: Object.keys(cards).map(key => cards[key]).sort((a, b) => {

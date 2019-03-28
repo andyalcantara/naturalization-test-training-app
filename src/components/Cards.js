@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text, FlatList, Button } from 'react-native';
+import {View, Text, FlatList, Button} from 'react-native';
 import Card from "./Card";
 
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
-import { handleQuestions } from '../actions/shared';
+import {handleQuestions} from '../actions/shared';
 
 class Cards extends React.Component {
 
@@ -13,7 +13,7 @@ class Cards extends React.Component {
     };
 
     componentDidMount() {
-        const { onReceiveQuestions } = this.props;
+        const {onReceiveQuestions} = this.props;
 
         onReceiveQuestions();
     }
@@ -26,8 +26,8 @@ class Cards extends React.Component {
 
     render() {
 
-        const { cards } = this.props;
-        const { counter } = this.state;
+        const {cards} = this.props;
+        const {counter} = this.state;
 
         let question;
         let answer;
@@ -41,11 +41,11 @@ class Cards extends React.Component {
             <View style={{flex: 1, alignItems: 'center'}}>
 
                 <View style={{flex: 3, padding: 5, width: '90%', justifyContent: 'center'}}>
-                    <View style={{flexDirection: 'row', borderColor: 'blue', borderWidth: 1, borderRadius: 6}}>
-                        <Card question={question} answer={answer} />
+                    <View style={{flexDirection: 'row', borderColor: 'blue', borderWidth: 1, borderRadius: 6}}><Card
+                        question={question} answer={answer}/>
                     </View>
 
-                    <Button title='Next' onPress={this.handleAnswer} />
+                    <Button title='Next' onPress={this.handleAnswer}/>
                 </View>
 
             </View>
@@ -55,9 +55,9 @@ class Cards extends React.Component {
 
 function mapStateToProps({categories, cards}) {
 
-  return {
-      cards: Object.keys(cards).map(key => cards[key]),
-  }
+    return {
+        cards: Object.keys(cards).map(key => cards[key]),
+    }
 }
 
 const mapDispatchToProps = (dispatch) => {
