@@ -1,10 +1,15 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Button} from 'react-native';
 
 import {connect} from 'react-redux';
 import {handleQuestions} from "../actions/shared";
+import Card from "./Card";
 
 class RandomQuestions extends React.Component {
+
+    state = {
+        counter: 0
+    };
 
     componentDidMount() {
         const {onReceiveQuestions} = this.props;
@@ -16,24 +21,44 @@ class RandomQuestions extends React.Component {
         return Math.floor(Math.random() * cards.length);
     };
 
+    handleAnswer = () => {
+        this.setState(previousState => ({
+            counter: previousState.counter + 1
+        }))
+    };
+
     render() {
+
         const {cards} = this.props;
+        const {counter} = this.state;
+
         let randomCards = [];
+        let question;
+        let answer;
 
         for (var i = 0; i < 10; i++) {
             randomCards.push(cards[`${this.generateIndexes()}`])
         }
 
+        if (randomCards.length > 0) {
 
+            question = randomCards[counter].question;
+            answer = randomCards[counter].answer;
 
-        return (
-            <View>
-                <Text>Random Questions</Text>
-                {
-                    randomCards.forEach(card => console.log(card['id']))
-                }
-            </View>
-        );
+            return (
+                <View style={{flex: 1, alignItems: 'center'}}>
+                    <Text>Random Questions</Text>
+                    <View style={{flex: 3, padding: 5, width: '90%', justifyContent: 'center'}}>
+                        <View style={{flexDirection: 'row', borderColor: 'blue', borderWidth: 1, borderRadius: 6}}>
+                            <Card question={question} answer={answer} />
+                        </View>
+
+                        <Button title='Next' onPress={this.handleAnswer}/>
+                    </View>
+
+                </View>
+            );
+        }
     }
 }
 
