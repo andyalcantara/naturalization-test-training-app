@@ -45,7 +45,8 @@ class Cards extends React.Component {
                         <Card question={question} answer={answer}/>
                     </View>
 
-                    <Button title='Next' onPress={this.handleAnswer}/>
+                    <Button title='Correct' onPress={this.handleAnswer} />
+                    <Button title='Incorrect' onPress={this.handleAnswer} />
                 </View>
 
             </View>
