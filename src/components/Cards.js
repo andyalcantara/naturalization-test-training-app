@@ -21,10 +21,11 @@ class Cards extends React.Component {
     }
 
     handleCorrectAnswer = () => {
+
         this.setState(previousState => ({
             counter: previousState.counter + 1,
             correctAnswers: previousState.correctAnswers + 1,
-        }))
+        }));
     };
 
     handleIncorrectAnswer = () => {
@@ -41,16 +42,21 @@ class Cards extends React.Component {
 
         let question;
         let answer;
+        let numberQuestion = counter + 1;
 
         if (cards[counter]) {
             question = cards[counter].question;
             answer = cards[counter].answer;
         }
 
+        if (numberQuestion >= cards.length) {
+            numberQuestion = cards.length;
+        }
+
         return (
             <View style={{flex: 1, alignItems: 'center'}}>
                 <View>
-                    <Text>{counter + 1} / {cards.length}</Text>
+                    <Text>{numberQuestion} / {cards.length}</Text>
                 </View>
                 <View style={{flex: 3, padding: 5, width: '90%', justifyContent: 'center'}}>
                     <View style={{flexDirection: 'row', borderColor: 'blue', borderWidth: 1, borderRadius: 6}}>
