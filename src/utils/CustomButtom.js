@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-const CustomButtom = () => {
+const CustomButtom = (props) => {
     return (
-        <View>
-            <Text>Hello Mate</Text>
-        </View>
+        <TouchableOpacity style={props.styles}>
+            <Text>{props.text}</Text>
+        </TouchableOpacity>
     );
 };
 
