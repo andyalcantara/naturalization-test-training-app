@@ -9,7 +9,9 @@ import {handleQuestions} from '../actions/shared';
 class Cards extends React.Component {
 
     state = {
-        counter: 0
+        counter: 0,
+        correctAnswers: 0,
+        incorrectAnswers: 0
     };
 
     componentDidMount() {
@@ -18,9 +20,17 @@ class Cards extends React.Component {
         onReceiveQuestions();
     }
 
-    handleAnswer = () => {
+    handleCorrectAnswer = () => {
         this.setState(previousState => ({
-            counter: previousState.counter + 1
+            counter: previousState.counter + 1,
+            correctAnswers: previousState.correctAnswers + 1,
+        }))
+    };
+
+    handleIncorrectAnswer = () => {
+        this.setState(previousState => ({
+            counter: previousState.counter + 1,
+            incorrectAnswers: previousState.incorrectAnswers + 1,
         }))
     };
 
@@ -39,14 +49,16 @@ class Cards extends React.Component {
 
         return (
             <View style={{flex: 1, alignItems: 'center'}}>
-
+                <View>
+                    <Text>{counter + 1} / {cards.length}</Text>
+                </View>
                 <View style={{flex: 3, padding: 5, width: '90%', justifyContent: 'center'}}>
                     <View style={{flexDirection: 'row', borderColor: 'blue', borderWidth: 1, borderRadius: 6}}>
                         <Card question={question} answer={answer}/>
                     </View>
 
-                    <Button title='Correct' onPress={this.handleAnswer} />
-                    <Button title='Incorrect' onPress={this.handleAnswer} />
+                    <Button title='Correct' onPress={this.handleCorrectAnswer} />
+                    <Button title='Incorrect' onPress={this.handleIncorrectAnswer} />
                 </View>
 
             </View>
