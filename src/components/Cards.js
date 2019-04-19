@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
 import Card from "./Card";
 import CustomButtom from '../utils/CustomButtom';
@@ -60,13 +60,15 @@ class Cards extends React.Component {
                 <View>
                     <Text>{numberQuestion} / {cards.length}</Text>
                 </View>
-                <View style={{flex: 3, padding: 5, width: '90%', justifyContent: 'center'}}>
+                <View style={{flex: 3, padding: 5, width: '90%', justifyContent: 'center', alignItems: 'center'}}>
                     <View style={{flexDirection: 'row', borderColor: 'blue', borderWidth: 1, borderRadius: 6}}>
                         <Card question={question} answer={answer}/>
                     </View>
 
-                    <CustomButtom text="Correct" onPress={this.handleCorrectAnswer}/>
-                    <CustomButtom text="Incorrect" onPress={this.handleIncorrectAnswer}/>
+                    <View style={styles.buttonsContainer}>
+                        <CustomButtom text="Correct" onPress={this.handleCorrectAnswer} style={{backgroundColor: 'green'}}/>
+                        <CustomButtom text="Incorrect" onPress={this.handleIncorrectAnswer} style={{marginTop: 20, backgroundColor: 'red'}} />
+                    </View>
 
                 </View>
 
@@ -74,6 +76,13 @@ class Cards extends React.Component {
         );
     }
 }
+
+const styles = StyleSheet.create({
+    buttonsContainer: {
+        marginTop: 40,
+        alignItems: 'center'
+    }
+});
 
 function mapStateToProps({categories, cards}) {
 

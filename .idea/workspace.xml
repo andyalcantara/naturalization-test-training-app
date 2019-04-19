@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cede45e0-f316-4d3d-b747-caf95629883b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cards.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/CustomButtom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/CustomButtom.js" afterDir="false" />
     </list>
@@ -53,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Cards.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="68" column="86" selection-start-line="68" selection-start-column="86" selection-end-line="68" selection-end-column="86" />
+            <state relative-caret-position="224">
+              <caret line="68" column="119" selection-start-line="68" selection-start-column="119" selection-end-line="68" selection-end-column="119" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -65,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/utils/CustomButtom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="86" selection-start-line="5" selection-start-column="86" selection-end-line="5" selection-end-column="86" />
+            <state relative-caret-position="240">
+              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -147,8 +146,8 @@
         <option value="$PROJECT_DIR$/src/components/Study.js" />
         <option value="$PROJECT_DIR$/src/components/StudyContent.js" />
         <option value="$PROJECT_DIR$/src/components/RandomQuestions.js" />
-        <option value="$PROJECT_DIR$/src/utils/CustomButtom.js" />
         <option value="$PROJECT_DIR$/src/components/Cards.js" />
+        <option value="$PROJECT_DIR$/src/utils/CustomButtom.js" />
       </list>
     </option>
   </component>
@@ -263,12 +262,12 @@
       <workItem from="1553714291675" duration="412000" />
       <workItem from="1553741649816" duration="3697000" />
       <workItem from="1555555257704" duration="1148000" />
-      <workItem from="1555621369522" duration="978000" />
+      <workItem from="1555621369522" duration="1528000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48638000" />
+    <option name="totallyTimeSpent" value="49188000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -466,20 +465,20 @@
     <entry file="file://$PROJECT_DIR$/node_modules/react/cjs/react.production.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/CustomButtom.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Cards.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="86" selection-start-line="5" selection-start-column="86" selection-end-line="5" selection-end-column="86" />
+        <state relative-caret-position="224">
+          <caret line="68" column="119" selection-start-line="68" selection-start-column="119" selection-end-line="68" selection-end-column="119" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Cards.js">
+    <entry file="file://$PROJECT_DIR$/src/utils/CustomButtom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="68" column="86" selection-start-line="68" selection-start-column="86" selection-end-line="68" selection-end-column="86" />
+        <state relative-caret-position="240">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
