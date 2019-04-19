@@ -1,6 +1,8 @@
 import React from 'react';
-import {View, Text, FlatList, Button} from 'react-native';
+import {View, Text, Button} from 'react-native';
+
 import Card from "./Card";
+import CustomButtom from '../utils/CustomButtom';
 
 import {connect} from 'react-redux';
 
@@ -63,8 +65,9 @@ class Cards extends React.Component {
                         <Card question={question} answer={answer}/>
                     </View>
 
-                    <Button title='Correct' onPress={this.handleCorrectAnswer} />
-                    <Button title='Incorrect' onPress={this.handleIncorrectAnswer} />
+                    <CustomButtom text="Correct" onPress={this.handleCorrectAnswer}/>
+                    <CustomButtom text="Incorrect" onPress={this.handleIncorrectAnswer}/>
+
                 </View>
 
             </View>
